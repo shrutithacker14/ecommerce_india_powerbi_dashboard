@@ -82,7 +82,7 @@ The supplied fact-level festive flag agrees with the October/November Diwali-sea
 ## 🧱 Star Schema
 
 ### Fact
-- `fact_sales` — one row per order item
+- `fact_sales` - one row per order item
 
 ### Dimensions
 - `dim_customers` - customer, geography, and RFM attributes
