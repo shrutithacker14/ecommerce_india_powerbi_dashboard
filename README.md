@@ -1,4 +1,4 @@
-# 🇮🇳 Indian E-Commerce Executive Performance Dashboard — Power BI
+# 🇮🇳 Indian E-Commerce Executive Performance Dashboard - Power BI
 
 An executive-style Power BI portfolio project for Indian retail/e-commerce analytics using INR (₹). The project demonstrates **star-schema modeling, DAX, time intelligence, customer segmentation, return diagnostics, and executive recommendations**.
 
@@ -85,18 +85,18 @@ The supplied fact-level festive flag agrees with the October/November Diwali-sea
 - `fact_sales` — one row per order item
 
 ### Dimensions
-- `dim_customers` — customer, geography, and RFM attributes
-- `dim_products` — product/category/pricing attributes
-- `dim_date` — calendar and festive-season attributes
-- `dim_geography` — state-to-zone mapping
+- `dim_customers` - customer, geography, and RFM attributes
+- `dim_products` - product/category/pricing attributes
+- `dim_date` - calendar and festive-season attributes
+- `dim_geography` - state-to-zone mapping
 
 ### Recommended relationships
 
 ```text
-dim_date[date]            1 ──── * fact_sales[order_date]
-dim_products[product_id]  1 ──── * fact_sales[product_id]
-dim_customers[customer_id]1 ──── * fact_sales[customer_id]
-dim_geography[state]      1 ──── * dim_customers[state]
+dim_date[date]            1 ---- * fact_sales[order_date]
+dim_products[product_id]  1 ---- * fact_sales[product_id]
+dim_customers[customer_id]1 ---- * fact_sales[customer_id]
+dim_geography[state]      1 ---- * dim_customers[state]
 ```
 
 Use **single-direction filtering from dimensions to fact**.
@@ -146,7 +146,7 @@ ecommerce_india_powerbi_dashboard/
 
 ## 🛠️ Power BI Page Architecture
 
-### Page 1 — Executive Overview
+### Page 1 - Executive Overview
 - Net Revenue
 - Orders
 - Customers
@@ -159,7 +159,7 @@ ecommerce_india_powerbi_dashboard/
 - Revenue by category
 - AOV by zone
 
-### Page 2 — Customer Intelligence
+### Page 2 - Customer Intelligence
 - Repeat Customer Rate
 - New vs Repeat customers
 - RFM segment revenue
@@ -167,14 +167,14 @@ ecommerce_india_powerbi_dashboard/
 - Revenue concentration of Champions
 - Zone/customer drill-through
 
-### Page 3 — Product Performance
+### Page 3 - Product Performance
 - Revenue by category/SKU
 - Gross profit by SKU
 - Gross margin by category
 - Discount-depth vs margin
 - Return rate by category/product
 
-### Page 4 — Management Insights
+### Page 4 - Management Insights
 Use evidence-backed callouts:
 - What happened?
 - Where is the problem?
