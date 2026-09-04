@@ -1,0 +1,158 @@
+-- ============================================================================
+-- INDIAN E-COMMERCE EXECUTIVE PERFORMANCE DASHBOARD
+-- Production DAX measures
+-- Model grain: one row per order item
+--
+-- REQUIRED POWER BI MODEL
+--   dim_date[date]       1 --> * fact_sales[order_date]
+--   dim_products[product_id] 1 --> * fact_sales[product_id]
+--   dim_customers[customer_id] 1 --> * fact_sales[customer_id]
+--   dim_geography[state] 1 --> * dim_customers[state]
+--
+-- Set dim_date[date] as the model's Date table in Power BI.
+-- Use single-direction relationships from dimensions to fact.
+-- ============================================================================
+
+-- 1. TOTAL REVENUE / GMV
+Total Revenue (₹) =
+CALCULATE(
+    SUM('fact_sales'[total_price_inr]),
+    'fact_sales'[order_status] = "Delivered"
+)
+
+-- 2. NET REVENUE AFTER DISCOUNTS
+-- Note: returned delivered items remain in revenue in the source data;
+-- their return impact is represented separately through Return Rate and
+-- the stored gross_profit_inr leakage value.
+Net Revenue (₹) =
+CALCULATE(
+    SUM('fact_sales'[net_revenue_inr]),
+    'fact_sales'[order_status] = "Delivered"
+)
+
+-- 3. UNIQUE DELIVERED ORDERS
+Total Orders =
+CALCULATE(
+    DISTINCTCOUNT('fact_sales'[order_id]),
+    'fact_sales'[order_status] = "Delivered"
+)
+
+-- 4. UNIQUE DELIVERED CUSTOMERS
+Total Customers =
+CALCULATE(
+    DISTINCTCOUNT('fact_sales'[customer_id]),
+    'fact_sales'[order_status] = "Delivered"
+)
+
+-- 5. AVERAGE ORDER VALUE
+AOV (₹) =
+DIVIDE(
+    [Net Revenue (₹)],
+    [Total Orders],
+    0
+)
+
+-- 6. GROSS PROFIT
+Gross Profit (₹) =
+CALCULATE(
+    SUM('fact_sales'[gross_profit_inr]),
+    'fact_sales'[order_status] = "Delivered"
+)
+
+-- 7. GROSS MARGIN
+-- Format this measure as Percentage with 1 decimal place in Power BI.
+Gross Margin (%) =
+DIVIDE(
+    [Gross Profit (₹)],
+    [Net Revenue (₹)],
+    0
+)
+
+-- 8. RETURNED ORDER ITEMS
+Returned Items =
+CALCULATE(
+    COUNTROWS('fact_sales'),
+    'fact_sales'[order_status] = "Delivered",
+    'fact_sales'[is_returned] = 1
+)
+
+-- 9. RETURN RATE
+-- Format as Percentage with 1 decimal place in Power BI.
+Return Rate (%) =
+DIVIDE(
+    [Returned Items],
+    CALCULATE(
+        COUNTROWS('fact_sales'),
+        'fact_sales'[order_status] = "Delivered"
+    ),
+    0
+)
+
+-- 10. PREVIOUS-YEAR NET REVENUE
+Revenue PY (₹) =
+CALCULATE(
+    [Net Revenue (₹)],
+    SAMEPERIODLASTYEAR('dim_date'[date])
+)
+
+-- 11. YEAR-OVER-YEAR REVENUE GROWTH
+-- Format as Percentage with 1 decimal place in Power BI.
+YoY Revenue Growth (%) =
+DIVIDE(
+    [Net Revenue (₹)] - [Revenue PY (₹)],
+    [Revenue PY (₹)],
+    0
+)
+
+-- 12. REPEAT CUSTOMER RATE
+-- A repeat customer has more than one distinct delivered order.
+-- Format as Percentage with 1 decimal place in Power BI.
+Repeat Customer Rate (%) =
+VAR CustomerOrderCounts =
+    ADDCOLUMNS(
+        CALCULATETABLE(
+            VALUES('fact_sales'[customer_id]),
+            'fact_sales'[order_status] = "Delivered"
+        ),
+        "@DeliveredOrders",
+            CALCULATE(
+                DISTINCTCOUNT('fact_sales'[order_id]),
+                'fact_sales'[order_status] = "Delivered"
+            )
+    )
+VAR RepeatCustomers =
+    COUNTROWS(
+        FILTER(
+            CustomerOrderCounts,
+            [@DeliveredOrders] > 1
+        )
+    )
+RETURN
+    DIVIDE(
+        RepeatCustomers,
+        [Total Customers],
+        0
+    )
+
+-- 13. PROCESSING ORDERS (OPERATIONAL MONITORING)
+Processing Orders =
+CALCULATE(
+    DISTINCTCOUNT('fact_sales'[order_id]),
+    'fact_sales'[order_status] = "Processing"
+)
+
+-- 14. RETURNED REVENUE VALUE
+Returned Revenue (₹) =
+CALCULATE(
+    SUM('fact_sales'[net_revenue_inr]),
+    'fact_sales'[order_status] = "Delivered",
+    'fact_sales'[is_returned] = 1
+)
+
+-- 15. RETURN-RELATED PROFIT LEAKAGE
+Return Profit Impact (₹) =
+CALCULATE(
+    SUM('fact_sales'[gross_profit_inr]),
+    'fact_sales'[order_status] = "Delivered",
+    'fact_sales'[is_returned] = 1
+)

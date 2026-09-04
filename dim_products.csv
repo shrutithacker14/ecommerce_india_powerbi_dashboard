@@ -1,0 +1,51 @@
+product_id,product_name,category,retail_price_inr,unit_cost_inr
+IND_PROD_001,Wireless Active Noise Cancelling Headphones,Electronics & Gadgets,12999.0,5500.0
+IND_PROD_002,Smart Bluetooth Fitness Watch,Electronics & Gadgets,4999.0,1800.0
+IND_PROD_003,Ultra-Slim Mechanical Bluetooth Keyboard,Electronics & Gadgets,3499.0,1200.0
+IND_PROD_004,7-in-1 Type-C Multiport Adapter Hub,Electronics & Gadgets,2499.0,850.0
+IND_PROD_005,4K Ultra HD Android Streaming Stick,Electronics & Gadgets,3999.0,1400.0
+IND_PROD_006,True Wireless Stereo (TWS) Earbuds,Electronics & Gadgets,2499.0,850.0
+IND_PROD_007,Portable Waterproof Bluetooth Speaker 20W,Electronics & Gadgets,2999.0,1100.0
+IND_PROD_008,Ergonomic Rechargeable Wireless Mouse,Electronics & Gadgets,1299.0,420.0
+IND_PROD_009,Fast Magnetic Wireless Charger Pad,Electronics & Gadgets,1499.0,480.0
+IND_PROD_010,1080p Full HD Webcam with Dual Mic,Electronics & Gadgets,2799.0,950.0
+IND_PROD_011,100% Pure Organic Cotton Printed Kurti,Apparel & Ethnic Wear,1299.0,380.0
+IND_PROD_012,Men Slim Fit Stretchable Denim Jeans,Apparel & Ethnic Wear,1999.0,650.0
+IND_PROD_013,Heavy Fleece Winter Pullover Hoodie,Apparel & Ethnic Wear,1899.0,620.0
+IND_PROD_014,Waterproof Breathable Trail Running Jacket,Apparel & Ethnic Wear,3499.0,1250.0
+IND_PROD_015,Stretchable High-Waist Ankle Leggings,Apparel & Ethnic Wear,799.0,240.0
+IND_PROD_016,Cushioned Breathable Bamboo Socks Pack of 6,Apparel & Ethnic Wear,599.0,160.0
+IND_PROD_017,Traditional Handloom Pure Silk Saree,Apparel & Ethnic Wear,4999.0,1750.0
+IND_PROD_018,Classic Cotton Oxford Semi-Formal Shirt,Apparel & Ethnic Wear,1499.0,450.0
+IND_PROD_019,Lightweight Quilted Puffer Jacket,Apparel & Ethnic Wear,2799.0,950.0
+IND_PROD_020,Casual Cotton Elastic Waist Joggers,Apparel & Ethnic Wear,1199.0,390.0
+IND_PROD_021,Stainless Steel Coffee French Press 800ml,"Home, Kitchen & Living",1499.0,480.0
+IND_PROD_022,Pre-Seasoned Heavy Duty Cast Iron Tawa,"Home, Kitchen & Living",1699.0,550.0
+IND_PROD_023,High-Precision Digital Kitchen Scale,"Home, Kitchen & Living",899.0,270.0
+IND_PROD_024,Quick-Boil Electric Glass Kettle 1.8L,"Home, Kitchen & Living",1799.0,580.0
+IND_PROD_025,Organic Bamboo Chopping Board Set of 3,"Home, Kitchen & Living",1299.0,380.0
+IND_PROD_026,Hard Anodized 5-Piece Non-Stick Cookware Set,"Home, Kitchen & Living",5999.0,2200.0
+IND_PROD_027,Ergonomic Orthopedic Memory Foam Cushion,"Home, Kitchen & Living",1499.0,480.0
+IND_PROD_028,Ultrasonic Aroma Essential Oil Diffuser 500ml,"Home, Kitchen & Living",1399.0,420.0
+IND_PROD_029,Double-Walled Insulated Flask Bottle 1L,"Home, Kitchen & Living",1099.0,320.0
+IND_PROD_030,Heat-Resistant Food Grade Silicone Spatula Set,"Home, Kitchen & Living",899.0,260.0
+IND_PROD_031,Kumkumadi Ayurvedic Glowing Face Oil 30ml,"Beauty, Skincare & Ayurveda",1299.0,320.0
+IND_PROD_032,Vitamin C & Niacinamide Brightening Serum,"Beauty, Skincare & Ayurveda",899.0,210.0
+IND_PROD_033,Rechargeable Sonic Electric Toothbrush,"Beauty, Skincare & Ayurveda",1999.0,650.0
+IND_PROD_034,Bhringraj & Onion Intensive Hair Growth Oil,"Beauty, Skincare & Ayurveda",699.0,160.0
+IND_PROD_035,Matte Finish Broad Spectrum Gel Sunscreen SPF 50,"Beauty, Skincare & Ayurveda",799.0,190.0
+IND_PROD_036,Natural Multani Mitti & Sandalwood Face Pack,"Beauty, Skincare & Ayurveda",499.0,110.0
+IND_PROD_037,Gentle Sulfate-Free Foaming Face Cleanser,"Beauty, Skincare & Ayurveda",549.0,120.0
+IND_PROD_038,Pure Cold-Pressed Virgin Coconut Oil 500ml,"Beauty, Skincare & Ayurveda",449.0,100.0
+IND_PROD_039,Pure Steam-Distilled Kannauj Rose Water 200ml,"Beauty, Skincare & Ayurveda",399.0,85.0
+IND_PROD_040,Natural Activated Bamboo Charcoal Teeth Whitening Kit,"Beauty, Skincare & Ayurveda",599.0,140.0
+IND_PROD_041,Eco-Friendly Non-Slip Alignment Yoga Mat 6mm,"Fitness, Sports & Yoga",1499.0,450.0
+IND_PROD_042,Stackable Latex Resistance Exercise Bands Set,"Fitness, Sports & Yoga",1199.0,320.0
+IND_PROD_043,BPA-Free Motivational Sipper Water Bottle 2L,"Fitness, Sports & Yoga",799.0,220.0
+IND_PROD_044,High-Speed Ball Bearing Skipping Rope,"Fitness, Sports & Yoga",499.0,120.0
+IND_PROD_045,Deep Tissue High Density Foam Roller,"Fitness, Sports & Yoga",999.0,280.0
+IND_PROD_046,Compact Parachute Nylon Camping Hammock,"Fitness, Sports & Yoga",1299.0,380.0
+IND_PROD_047,Anti-Shock Aluminum Trekking Hiking Poles Pair,"Fitness, Sports & Yoga",1899.0,620.0
+IND_PROD_048,Waterproof Rechargeable LED Headlamp 1200 Lumens,"Fitness, Sports & Yoga",899.0,240.0
+IND_PROD_049,Cast Iron Hex Dumbbells Set with Rack 20kg,"Fitness, Sports & Yoga",6499.0,2400.0
+IND_PROD_050,Anti-Slip Padded Weightlifting Gym Gloves,"Fitness, Sports & Yoga",699.0,180.0

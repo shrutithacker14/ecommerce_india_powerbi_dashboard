@@ -1,0 +1,3 @@
+# Optional Python environment for data QA / reproducibility
+pandas==2.2.0
+numpy==1.26.3
